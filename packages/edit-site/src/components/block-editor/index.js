@@ -28,16 +28,19 @@ import NavigateToLink from '../navigate-to-link';
 import { SidebarInspectorFill } from '../sidebar';
 import { store as editSiteStore } from '../../store';
 
-function Canvas( { body } ) {
+function Canvas( { body, styles } ) {
 	useBlockSelectionClearer( body );
 	useTypingObserver( body );
+	const iframeRef = useEditorStyles( styles );
 
 	return (
-		<DropZoneProvider>
-			<WritingFlow>
-				<BlockList className="edit-site-block-editor__block-list" />
-			</WritingFlow>
-		</DropZoneProvider>
+		<div ref={ iframeRef }>
+			<DropZoneProvider>
+				<WritingFlow>
+					<BlockList className="edit-site-block-editor__block-list" />
+				</WritingFlow>
+			</DropZoneProvider>
+		</div>
 	);
 }
 
