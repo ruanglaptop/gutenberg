@@ -764,6 +764,8 @@ export class RichText extends Component {
 			);
 		} else if ( ! isSelected && prevIsSelected ) {
 			this._editor.blur();
+		} else if ( ! this.isIOS && isSelected && ! this._editor.isFocused() ) {
+			this._editor.focus();
 		}
 	}
 
