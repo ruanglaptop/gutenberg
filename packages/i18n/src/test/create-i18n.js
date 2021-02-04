@@ -275,7 +275,7 @@ describe( 'i18n filters', () => {
 				if (
 					single === 'Always' &&
 					! context &&
-					domain === 'default'
+					( domain ?? 'default' ) === 'default'
 				) {
 					return true;
 				}

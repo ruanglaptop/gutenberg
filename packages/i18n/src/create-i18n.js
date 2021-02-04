@@ -381,9 +381,9 @@ export const createI18n = ( initialData, initialDomain, hooks ) => {
 	};
 
 	/** @type {HasTranslation} */
-	const hasTranslation = ( single, context, domain = 'default' ) => {
+	const hasTranslation = ( single, context, domain ) => {
 		const key = context ? context + '\u0004' + single : single;
-		let result = !! tannin.data?.[ domain ]?.[ key ];
+		let result = !! tannin.data?.[ domain ?? 'default' ]?.[ key ];
 		if ( hooks ) {
 			/**
 			 * Filters the presence of a translation in the locale data.
