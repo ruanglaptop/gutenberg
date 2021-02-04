@@ -395,7 +395,7 @@ export const createI18n = ( initialData, initialDomain, hooks ) => {
 			 */
 			result = /** @type { boolean } */ (
 				/** @type {*} */ hooks.applyFilters(
-					'i18n.hasTranslation',
+					'i18n.has_translation',
 					result,
 					single,
 					context,
@@ -405,7 +405,7 @@ export const createI18n = ( initialData, initialDomain, hooks ) => {
 
 			result = /** @type { boolean } */ (
 				/** @type {*} */ hooks.applyFilters(
-					'i18n.hasTranslation_' + getFilterDomain( domain ),
+					'i18n.has_translation_' + getFilterDomain( domain ),
 					result,
 					single,
 					context,

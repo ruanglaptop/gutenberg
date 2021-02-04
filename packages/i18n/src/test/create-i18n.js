@@ -269,7 +269,7 @@ describe( 'i18n filters', () => {
 				translation + `/i18n.ngettext_with_${ context }_domain`
 		);
 		hooks.addFilter(
-			'i18n.hasTranslation',
+			'i18n.has_translation',
 			'test',
 			( hasTranslation, single, context, domain ) => {
 				if (
