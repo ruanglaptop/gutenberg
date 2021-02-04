@@ -267,7 +267,7 @@ class WP_Theme_JSON_Resolver {
 	 *
 	 * @return WP_Theme_JSON Entity that holds theme data.
 	 */
-	private function get_theme_origin( $theme_support_data = array() ) {
+	public function get_theme_origin( $theme_support_data = array() ) {
 		$theme_json_data = self::get_from_file( locate_template( 'experimental-theme.json' ) );
 		self::translate_presets( $theme_json_data, wp_get_theme()->get( 'TextDomain' ) );
 

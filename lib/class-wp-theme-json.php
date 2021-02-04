@@ -103,7 +103,8 @@ class WP_Theme_JSON {
 	 * }
 	 */
 	const SCHEMA = array(
-		'styles'   => array(
+		'templateParts' => null,
+		'styles'        => array(
 			'border'     => array(
 				'radius' => null,
 				'color'  => null,
@@ -134,7 +135,7 @@ class WP_Theme_JSON {
 				'textTransform'  => null,
 			),
 		),
-		'settings' => array(
+		'settings'      => array(
 			'border'     => array(
 				'customRadius' => null,
 				'customColor'  => null,
@@ -1048,6 +1049,18 @@ class WP_Theme_JSON {
 		} else {
 			return $this->theme_json['settings'];
 		}
+	}
+
+	/**
+	 * Returns the template part data of current theme.
+	 *
+	 * @return array
+	 */
+	public function get_template_part_data() {
+		if ( ! isset( $this->theme_json['templateParts'] ) ) {
+			return array();
+		}
+		return $this->theme_json['templateParts'];
 	}
 
 	/**
